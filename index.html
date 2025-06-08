@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gowri Sankari K Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+      header {
+        background: linear-gradient(90deg, #3a1c71, #d76d77, #ffaf7b);
+        padding: 20px;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+        color: #fff;
+      }
+      /* Intro box styling */
+      .intro-box {
+        background: white;
+        max-width: 900px;
+        margin: 20px auto 40px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding: 20px 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      .intro-photo {
+        flex: 0 0 180px;
+      }
+      .intro-photo img {
+        width: 180px;
+        height: 190px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+      .intro-text {
+        flex: 1;
+        font-size: 1.1em;
+        color: #222;
+      }
+      .resume-download {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .resume-download a {
+        background: #3a1c71;
+        color: white;
+        font-weight: 600;
+        padding: 12px 30px;
+        border-radius: 40px;
+        text-decoration: none;
+        box-shadow: 0 4px 10px rgba(58, 28, 113, 0.6);
+        transition: background 0.3s ease;
+        display: inline-block;
+      }
+      .resume-download a:hover {
+        background: #d76d77;
+        box-shadow: 0 6px 14px rgba(215, 109, 119, 0.8);
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: #1c1f2b;
+        padding: 10px;
+        gap: 15px;
+      }
+      nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: background 0.3s;
+      }
+      nav a:hover {
+        background-color: #333;
+        border-radius: 5px;
+      }
+      section {
+        padding: 40px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+      #home {
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+      }
+      #about {
+        background: linear-gradient(135deg, #fff9f9 0%, #fff0f0 100%);
+      }
+      #education {
+        background: linear-gradient(135deg, #f0f7ff 0%, #e6f0fa 100%);
+      }
+      #skills {
+        background: linear-gradient(135deg, #f5fff0 0%, #ebfae6 100%);
+      }
+      #certifications {
+        background: linear-gradient(135deg, #fff5f0 0%, #ffefe6 100%);
+      }
+      #internship {
+        background: linear-gradient(135deg, #f0f5ff 0%, #e6ebfa 100%);
+      }
+      #projects {
+        background: linear-gradient(135deg, #f9fff0 0%, #f5fae6 100%);
+      }
+      #contact {
+        background: linear-gradient(135deg, #f0fff5 0%, #e6faeb 100%);
+      }
+      .icon {
+        font-size: 1.2em;
+      }
+      .cert-grid,
+      .achieve-gallery {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .cert-grid img,
+      .achieve-gallery img {
+        width: 220px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .cert-grid img:hover,
+      .achieve-gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .typing {
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 500;
+        margin: 20px 0;
+        min-height: 1.5em;
+      }
+      .typing::after {
+        content: "|";
+        animation: blink 1s infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+      .about-content {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      .about-content p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>👩‍💻 Gowri Sankari K</h1>
+
+      <!-- Intro box with photo and details -->
+      <div class="intro-box" data-aos="fade-up">
+        <div class="intro-photo">
+          <img
+            src="IMAGES/gowrisankariphoto (3).jpg"
+            alt="Gowrisankari Photo"
+          />
+        </div>
+        <div class="intro-text">
+          <p>
+            I'm Gowri Sankari K from Arani, Tamil Nadu — a passionate
+            Electronics and Communication Engineering student specializing in
+            IoT, with a drive to build real-world tech solutions through
+            innovation and collaboration.
+          </p>
+          <div class="resume-download">
+            <a
+              href="https://drive.google.com/file/d/1y67EvG404lRH7R0pmQ2cAYrUxl7DepDu/view?usp=drive_link"
+              target="_blank"
+              >Download Resume</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav>
+      <a href="#home"><i class="fas fa-house icon"></i> Home</a>
+      <a href="#about"><i class="fas fa-user icon"></i> About</a>
+      <a href="#education"
+        ><i class="fas fa-graduation-cap icon"></i> Education</a
+      >
+      <a href="#skills"><i class="fas fa-lightbulb icon"></i> Skills</a>
+      <a href="#certifications"
+        ><i class="fas fa-certificate icon"></i> Certifications</a
+      >
+      <a href="#internship"><i class="fas fa-briefcase icon"></i> Internship</a>
+      <a href="#projects"><i class="fas fa-code icon"></i> Projects</a>
+      <a href="#contact"><i class="fas fa-envelope icon"></i> Contact</a>
+    </nav>
+
+    <section id="home">
+      <div class="typing"></div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>My name is Gowri Sankari K, and I'm from Arani, Tamil Nadu.</p>
+
+        <p>
+          I participated in the Smart India Hackathon (SIH) 💡, collaborating
+          with a team to design real-time solutions for real-world challenges.
+          This experience enhanced my 🔧 technical problem-solving skills and my
+          ability to work under pressure 🤝 with a team.
+        </p>
+
+        <p>
+          In addition, I co-organized a technical symposium 🛠️ in the ECE
+          department, working closely with seniors to coordinate and manage
+          events. I was responsible for the Hangman event 🎯, contributing
+          significantly to its successful execution.
+        </p>
+
+        <p>
+          Outside of academics, I enjoy playing online chess ♟️ to sharpen my
+          strategic thinking, and solving the Rubik's Cube 🔄 to boost my
+          logical reasoning and concentration 🧠.
+        </p>
+
+        <p>
+          I'm a joyful 😊 and adaptable 🔄 individual who thrives in
+          collaborative environments 🤗. I easily connect and gel well with
+          others, which helps me build strong team dynamics and maintain a
+          positive atmosphere 🌟 wherever I go.
+        </p>
+
+        <p>
+          My ability to adapt quickly to new situations and work with different
+          personalities has consistently helped me contribute effectively to
+          group projects, internships, and technical events 🧑‍💻📚.
+        </p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: center;
+        "
+      >
+        <!-- College Box -->
+        <div
+          style="
+            flex: 1 1 300px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <h3>🎓 College</h3>
+          <p>
+            <strong>Bachelor of Engineering (B.E.)</strong> in Electronics and
+            Communication Engineering (ECE)
+          </p>
+          <p><strong>Specialization:</strong> Internet of Things (IoT)</p>
+          <p>
+            <strong>Institution:</strong> RMK College of Engineering and
+            Technology (RMKCET), Tamil Nadu
+          </p>
+          <p>
+            <strong>Status:</strong> Pre-final year student (Expected
+            Graduation: 2026)
+          </p>
+          <ul>
+            <li>Projects in AI, IoT, and Embedded Systems</li>
+            <li>Completed NPTEL courses in Python & IoT</li>
+            <li>Participated in technical events</li>
+            <li>Organised symposium event</li>
+          </ul>
+        </div>
+
+        <!-- School Box -->
+        <div
+          style="
+            flex: 1 1 300px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <h3>🏫 School</h3>
+          <p><strong>Higher Secondary Education (HSC)</strong></p>
+          <p>Government Girls Higher Secondary School, Arani</p>
+          <p><strong>Percentage:</strong> 86%</p>
+          <p><strong>Board:</strong> Tamil Nadu State Board</p>
+          <br />
+          <p><strong>Secondary School Leaving Certificate (SSLC)</strong></p>
+          <p>Government Girls Higher Secondary School, Arani</p>
+          <p><strong>Percentage:</strong> 81%</p>
+          <p><strong>Board:</strong> Tamil Nadu State Board</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          justify-content: center;
+        "
+      >
+        <span
+          style="
+            padding: 10px 18px;
+            background: #3a1c71;
+            color: white;
+            border-radius: 20px;
+          "
+          >C++</span
+        >
+        <span
+          style="
+            padding: 10px 18px;
+            background: #3a1c71;
+            color: white;
+            border-radius: 20px;
+          "
+          >SQL</span
+        >
+        <span
+          style="
+            padding: 10px 18px;
+            background: #3a1c71;
+            color: white;
+            border-radius: 20px;
+          "
+          >Python</span
+        >
+        <span
+          style="
+            padding: 10px 18px;
+            background: #3a1c71;
+            color: white;
+            border-radius: 20px;
+          "
+          >IoT</span
+        >
+        <span
+          style="
+            padding: 10px 18px;
+            background: #3a1c71;
+            color: white;
+            border-radius: 20px;
+          "
+          >Embedded C</span
+        >
+        <span
+          style="
+            padding: 10px 18px;
+            background: #3a1c71;
+            color: white;
+            border-radius: 20px;
+          "
+          >Arduino</span
+        >
+      </div>
+    </section>
+
+    <section id="certifications" data-aos="fade-up">
+      <h2>Certifications</h2>
+      <div class="cert-grid">
+        <img
+          src="IMAGES/NPTEL-IOT-CERTIFICATE (1)_page-0001.jpg"
+          alt="NPTEL-IOT-CERTIFICATE"
+        />
+        <img
+          src="IMAGES/sololearnc++certificate_page-0001.jpg"
+          alt="C++-SOLOLEARN"
+        />
+        <img
+          src="IMAGES/google certificate_page-0001.jpg"
+          alt="COURSERA-PYTHON-CERTIFICATE"
+        />
+        <img
+          src="IMAGES/KPIT_SPARKLE_2025_CERTIFICATE_page-0001.jpg"
+          alt="KPIT-SPARKLE-2025-ACHIEVEMENT"
+        />
+      </div>
+    </section>
+
+    <section id="internship">
+      <h2 data-aos="fade-up">Internship Experience</h2>
+      <div
+        class="cert-grid"
+        style="justify-content: center; padding-bottom: 20px"
+      >
+        <img
+          src="IMAGES/INTERNSHIP_CERTIFICATE_111622104024_page-0001.jpg"
+          alt="Internship Photo 1"
+        />
+        <img
+          src="IMAGES/Screenshot 2025-06-07 125425.png"
+          alt="Internship Photo 2"
+        />
+        <img
+          src="IMAGES/WhatsApp Image 2025-06-07 at 12.39.47_5d733b4c.jpg"
+          alt="Internship Photo 3"
+        />
+      </div>
+      <div class="internship-details" data-aos="fade-up" data-aos-delay="100">
+        <p>
+          I completed a one-month internship at Edify Techno Solutions,
+          Vadapalani, focused on IoT, sensor interfacing, and Arduino. I built
+          mini-projects like:
+          <br /><br />
+          - LDR for light control<br />
+          - IR Sensor for object detection<br />
+          - Gas & Fire sensors with LCD<br />
+          - LED blinking automation<br />
+          - Blynk-based IoT control
+          <br /><br />
+          I collaborated with teammates, improved technical and teamwork skills,
+          and became more confident with embedded systems.
+        </p>
+        <a href="IMAGES/INTERNSHIP_PPT_111622104024.pptx" target="_blank"
+          >View Internship Presentation (PPT)</a
+        >
+        <div class="video-container">
+          <iframe
+            src="IMAGES/WhatsApp Video 2025-06-07 at 12.39.57_b72ca6e5.mp4"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <h3>ENERGY EFFICIENT AI ACCELERATOR FOR EDGE COMPUTING DEVICES</h3>
+      <p>Description:
+        Developed a compact, low-power AI accelerator system designed for edge computing applications. The project integrates hardware and software components to enable real-time AI inference directly on edge devices, minimizing energy consumption ⚡ while maintaining high accuracy 🎯 and performance 🚀. This solution is particularly suited for environments where power efficiency and fast data processing are critical, such as industrial automation 🏭, surveillance 🎥, and IoT applications 🌐.
+        </p>
+        <p>
+        Technologies Used:
+        *Google Coral USB Accelerator with Edge TPU ⚙️ for hardware AI acceleration
+        *Raspberry Pi 4  as the edge computing platform
+        *YOLOv8 (You Only Look Once, version 8) 🤖 — custom-trained object detection model for real-time human detection 👁️
+        *TensorFlow Lite ⚡ for optimized, low-latency AI model inference on edge devices
+        *Python 🐍 for programming and system integration
+        *Camera module 📷 for real-time video capture and processing
+      </p>
+      <p>
+        Impact:
+        *Energy Efficiency 💡: Reduced power consumption compared to traditional cloud-based AI processing by performing inference locally at the edge, extending battery life 🔋 and lowering operational costs 💰.
+        *Real-Time Processing ⏱️: Enabled fast, accurate detection with low latency, critical for safety and surveillance systems 🚨.
+        *Scalability 📈: The system’s modular design allows deployment across various edge devices in different industries, enhancing automation and monitoring capabilities 🤝.
+        *Cost-Effective 🏷️: Reduced dependency on continuous network connectivity 🌍 and cloud resources ☁️, making AI solutions more accessible in remote or resource-constrained settings.</p>
+        <a href="IMAGES/ENERGY EFFICIENT AI ACCELERATOR FOR EDGE COMPUTING DEVICES.pptx" target="_blank"
+        >View Internship Presentation (PPT)</a
+      >
+     
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li><i class="fas fa-phone icon"></i> +91-8838683686</li>
+        <li>
+          <i class="fas fa-envelope icon"></i> gowrisankarikumar16@gmail.com
+        </li>
+        <li>
+          <i class="fab fa-github icon"></i>
+          <a href="https://github.com/gowri4" target="_blank"
+            >GitHub</a
+          >
+        </li>
+        <li>
+          <i class="fab fa-linkedin icon"></i>
+          <a
+            href="https://www.linkedin.com/in/gowri-sankari-k-75556025b"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </li>
+        <li>
+          <i class="SKILLRACK_CODING_PLATFORM"></i>
+          <a
+            href="https://www.skillrack.com/faces/resume.xhtml?id=406488&key=8a851bcb5dfb17f61c529b4b0b188a62685a21f6"
+            target="_blank"
+            >SKILLRACK_CODING_PLATFORM</a
+          >
+        </li>
+      </ul>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      // Typing animation
+      const typingText =
+        "Engineering Student | Innovator | Ready for the Next Step";
+      let i = 0;
+      const typingElement = document.querySelector(".typing");
+
+      function type() {
+        if (i < typingText.length) {
+          typingElement.textContent += typingText.charAt(i);
+          i++;
+          setTimeout(type, 100);
+        }
+      }
+
+      type();
+    </script>
+  </body>
+</html>
